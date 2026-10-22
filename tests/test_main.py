@@ -43,6 +43,6 @@ def test_create_second_todo(client):
     response = client.post("/todos", json={"title": "Вторая задача"})
     data = response.get_json()
     
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert data["id"] == 2
     assert data["title"] == "Вторая задача"
